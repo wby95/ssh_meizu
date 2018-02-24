@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE struts PUBLIC
+	"-//Apache Software Foundation//DTD Struts Configuration 2.3//EN"
+	"http://struts.apache.org/dtds/struts-2.3.dtd">
+
+<struts>
+
+
+
+
+	<package name="default" extends="struts-default"  namespace="/">
+
+		<!--首页跳转-->
+		<action name="index" class="indexAction">
+			<result name="index">/WEB-INF/pages/login.jsp</result>
+		</action>
+
+		<!--用户模块-->
+        <action name="user_*" class="userAction" method="{1}">
+        	<result name="SUCCESS">/WEB-INF/pages/mall_show.jsp</result>
+			<result name="LOGIN">/WEB-INF/pages/index.jsp</result>
+			<result name="logout">/WEB-INF/pages/index.jsp</result>
+
+			<result name="register">/WEB-INF/pages/register.jsp</result>
+			<result name="registerin">/WEB-INF/pages/index.jsp</result>
+        </action>
+
+		<!--手机模块-->
+		<action name="phone_*" class="phoneAction" method="{1}">
+			<result name="findById">/WEB-INF/pages/shopping_show.jsp</result>
+			<result name="findByBId">/WEB-INF/pages/mall_show.jsp</result>
+		</action>
+
+	</package>
+
+</struts>

@@ -1,0 +1,210 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+}
+body{
+    min-width: 960px;
+    background-color: #F6F6F6 !important;
+
+}
+.clearfix:after { content: ""; display: block; clear: both;}
+a:hover{
+    text-decoration: none !important;
+}
+.container{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+.header{
+    position: relative;
+    height: 80px;
+    background: #fff;
+}
+.header_logo{
+    position: relative;
+    top: 13px;
+}
+.header_router{
+    width: 400px;
+    position: relative;
+    top:20px;
+    float: left;
+}
+.header_right{
+    float: right;
+    position: relative;
+    right: 5%;
+    top:30px;
+}
+.receiverMsg,.orderMsg,.paymentMsg{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+    background: #fff;
+}
+.receiverMsg_box li{
+    width: 275px;
+    height: 144px;
+   float: left;
+    border: 0.5px solid #ccc;
+    margin-right: 10px;
+    cursor: pointer;
+}
+.receiverMsg_selected,.payment_antIns_selected{
+    border: 2px solid #00a7ea !important;
+}
+.payment_antIns_selected{
+    color: #00a7ea;
+}
+
+#addMsg{
+    text-align: center;
+}
+#addMsg>div{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.receiverMsg_box{
+    padding-bottom: 30px;
+    margin-left: 20px;
+}
+.orderMsg_product img{
+    float: left;
+}
+.orderMsg_product p{
+    position: relative;
+    top: 20px;
+}
+.orderMsg{
+    position: relative;
+    top: 10px;
+    padding-bottom: 20px;
+}
+.orderMsg>table tr{
+    border-bottom: 1px solid #ccc;
+}
+.orderMsg>table{
+    border: 1px solid #ccc;
+    margin-bottom: 20px;
+    font-size: 16px;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+}
+.orderMsg>h4,.paymentMsg>h4{
+    padding-top: 20px;
+    padding-left: 20px;
+}
+.orderMsg_info textarea{
+    width: 502px;
+    height: 48px;
+    resize: none;
+}
+.orderMsg_info{
+    font-size: 12px;
+    float: left;
+    width: 600px;
+    margin: 20px 0 20px 15px;
+}
+.orderMsg_total{
+    float: right;
+    position: relative;
+    top: 30px;
+    right: 20px;
+}
+#receiverName{
+    float: left;
+    font-weight: bold;
+    margin:10px 0 10px 10px
+}
+#receiverTel{
+    float: right;
+    font-weight: bold;
+    margin:10px 10px 10px 0
+}
+#receiverAddr{
+    position: relative;
+    top: 15px;
+    left: 10px;
+}
+.payment_select{
+    width: 95%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    border: 1px solid #ccc;
+    margin-top: 30px;
+}
+.payment_select span{
+    float: left;
+    margin-top: 10px;
+    margin-right: 50px;
+    width: 60px;
+}
+.payment_aliSelect ul,.payment_bank ul,.payment_wechat ul{
+    float: left;
+}
+.payment_ali li,.payment_bank li:not(:last-child){
+    float: left;
+    margin-right: 80px;
+}
+.payment_antIns{
+    position: relative;
+    width: 600px;
+    background-color: #f6f6f6;
+    left: 50px;
+}
+.payment_antIns li{
+    width: 160px;
+    height: 50px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+    margin: 20px 0 20px 20px;
+    cursor: pointer;
+}
+.payment_antIns_p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.payment_ali,.payment_wechat,.payment_bank{
+    margin: 50px 0 50px 50px;
+}
+.payment_computed{
+    width: 254px;
+    height: 318px;
+    float: right;
+    position: relative;
+    right:50px;
+    top:50px;
+}
+.payment_computed>div p:first-child{
+    float: left;
+}
+.payment_computed>div p:last-child{
+    float: right;
+}
+#checkedButton{
+    width: 98px;
+    height: 35px;
+    border: none;
+    background-color: #00a7ea;
+    float: right;
+}
+#footer{
+    bottom: 0;
+    text-align: center;
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+}
+#footer p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

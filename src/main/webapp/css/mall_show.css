@@ -1,0 +1,194 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    text-decoration: none;
+    font-family: "微软雅黑",sans-serif;
+
+}
+.clearfix:after { content: ""; display: block; clear: both;}
+a:hover{
+    text-decoration: none !important;
+}
+.on{
+    color: #00a7ea ;
+}
+.header{
+    position: absolute;
+    width: 100%;
+    top: 0;
+}
+body{
+    min-width: 1240px;
+    max-width: 100%;
+    background-color: #F6F6F6 !important;
+
+}
+.navs{
+    float: right;
+    margin-right: 150px;
+    margin-top: 30px;
+}
+.header a{
+    color: #000;
+}
+.header a:hover{
+    color: #31a5e7;
+}
+.router{
+    padding-bottom: 10px;
+    padding-top:10px;
+}
+.login{
+    position: absolute;
+    left: 90%;
+    top: 30px;
+    font-size: 14px;
+}
+.login a{
+    padding-right: 5px;
+    padding-left: 5px;
+}
+.navs li{
+    width: 60px;
+    display: inline-block;
+    margin-right: 20px;
+    font-size: 14px;
+}
+.logo{
+    margin-left: 20px;
+    margin-top: 5px;
+}
+.logo img{
+    margin-top: 30px;
+    padding-bottom: 10px;
+}
+.header{
+    position: relative;
+    width: 100%;
+    height: 80px;
+    top: 0;
+    background-color: #ffffff;
+
+}
+.nav-product dl{
+    width: 100%;
+    position: absolute;
+    left: 0;
+    padding-left: 300px;
+    padding-top: 10px;
+    background: #fff;
+    display: none;
+}
+
+.nav-product:hover dl{
+     display:block;
+ }
+.nav-product dl dd{
+    float: left;
+    width: 150px;
+    height: 120px;
+    text-align: center;
+}
+.nav-product dl dd a{
+    color: #515151;
+    position: relative;
+    top:30px;
+    font-size: 12px;
+}
+.img-pro6p{
+    position: relative;
+    top:-20px;
+    left: 50%;
+    margin-left: -75px;
+}
+
+.img-pro6s{
+    position: relative;
+    top:-18px;
+    left: 50%;
+    margin-left: -102px;
+    margin-bottom: 5px;
+}
+
+.img-mx6{
+    position: relative;
+    top:-20px;
+    left: 50%;
+    margin-left: -112px;
+}
+
+.img-mlX{
+    position: relative;
+    top:-15px;
+    left: 50%;
+    margin-left: -112px;
+    margin-bottom: 5px;
+}
+.nav-dd{
+    position: relative;
+    top:65px !important;
+    left: 5%;
+}
+
+.selectBox,.router,.showItem{
+    width: 1240px;
+    margin-top: 20px;
+    margin: 0 auto;
+}
+.router{
+
+}
+.selectBox{
+    background-color: #ffffff;
+    border: 1px solid #efefef;
+}
+.brandSelect ul li,.screenSelect ul li{
+    display: inline-block;
+    width:80px;
+}
+.brandSelect ul li:not(:first-child),.screenSelect ul li:not(:first-child){
+    cursor: pointer;
+}
+.screenSelect,.brandSelect{
+   padding:20px 0 0 20px;
+}
+.screenSelect{
+    padding-bottom:20px;
+}
+.showItem{
+    margin-top: 30px;
+    cursor: pointer;
+}
+.showItem>.row>ul>li{
+    position: relative;
+    left: 15px;
+    width:301px;
+    height:410px;
+    background-color: #ffffff;
+    text-align: center;
+    margin-right: 12px;
+    margin-bottom: 10px;
+}
+#smallImg>a{
+    display: inline-block;
+    margin-right: 5px;
+}
+.onborder{
+    border: 1px solid #596959 !important;
+}
+
+#footer{
+    bottom: 0;
+    text-align: center;
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+}
+#footer p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+

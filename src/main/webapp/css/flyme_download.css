@@ -1,0 +1,101 @@
+*{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    font-family: "微软雅黑",Arial,Helvetica,sans-serif;
+}
+body{
+    min-width: 960px;
+    background-color: #F6F6F6 !important;
+
+}
+.clearfix:after { content: ""; display: block; clear: both;}
+a:hover{
+    text-decoration: none !important;
+}
+.container{
+    width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    overflow: hidden;
+}
+#nav{
+    background-color: #ffffff;
+}
+#navLi{
+    padding-right: 10% ;
+}
+
+.wrap{
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 20px;
+}
+.brands_wrap{
+    width: 100%;
+    border-bottom: 1px dashed #ccc;
+    line-height: 55px;
+    background-color: #ffffff;
+}
+
+.brands_title{
+    width: 57%;
+    margin: 0 70px;
+    float: left;
+    /*height: 104px;*/
+    padding: 24px 0 40px 0;
+    overflow: hidden;
+
+}
+
+.brands_title span{
+    line-height:64px;
+    display: inline-block;
+    margin-right: 55px;
+    cursor: pointer;
+    font-size: 18px;
+}
+
+.on{
+    color: #00a7ea ;
+}
+
+.arrow{
+    float: right;
+    width: 100px;
+    margin-right:40px;
+    padding-top: 25px;
+    cursor: pointer;
+}
+
+.glyphicon{
+    position: relative;
+    left:5px;
+}
+
+.brands_phone{
+    width: 100%;
+    background-color: #ffffff;
+    /*position: relative;*/
+    margin: 0 !important;
+
+}
+
+.phone_img{
+    height:220px !important;
+}
+.brands_phone_list{
+    margin-top: 50px;
+}
+#footer{
+    bottom: 0;
+    text-align: center;
+    background-color: #ffffff;
+    width: 100%;
+    height: 50px;
+}
+#footer p{
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+}

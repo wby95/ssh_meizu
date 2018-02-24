@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    
+<hibernate-mapping package="com.wby.phonesize.entity">
+	<class name="Phonesize" table="phonesize">
+	   <id name="psid">
+		   <generator class="native"></generator>
+	   </id>
+		<property name="psname"></property>
+		<many-to-one name="brand" class="com.wby.brand.entity.Brand" column="bid" lazy="false"/>
+		<set name="phones" lazy="false" fetch="join">
+			<key column="psid"></key>
+			<one-to-many class="com.wby.phone.entity.Phone"></one-to-many>
+		</set>
+	</class>
+</hibernate-mapping>

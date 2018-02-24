@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-mapping PUBLIC 
+    "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+    "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+    <!--
+       this.pid = pid;
+        this.pname = pname;
+        this.price = price;
+        this.pdesc = pdesc;
+        this.image = image;
+        this.pnum = pnum;-->
+<hibernate-mapping package="com.wby.phone.entity">
+	<class name="Phone" table="phone">
+	   <id name="pid">
+		   <generator class="native"></generator>
+	   </id>
+		<property name="pname"></property>
+		<property name="price"></property>
+		<property name="pdesc"></property>
+		<property name="image"></property>
+		<property name="pnum"></property>
+      <many-to-one name="phonesize" class="com.wby.phonesize.entity.Phonesize" column="psid" lazy="false"></many-to-one>
+	</class>
+</hibernate-mapping>

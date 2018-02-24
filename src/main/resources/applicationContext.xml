@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xmlns:aop="http://www.springframework.org/schema/aop"
+	xmlns:context="http://www.springframework.org/schema/context"
+	xmlns:tx="http://www.springframework.org/schema/tx"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-4.0.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-4.0.xsd
+		http://www.springframework.org/schema/tx http://www.springframework.org/schema/tx/spring-tx-4.0.xsd">
+
+	<!-- 导入资源文件 -->
+	<context:property-placeholder location="classpath:db.properties"/>
+
+	<context:annotation-config />
+
+	<!-- 配置 C3P0 数据源 -->
+	<bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
+		<property name="user" value="${jdbc.user}"></property>
+		<property name="password" value="${jdbc.password}"></property>
+		<property name="driverClass" value="${jdbc.driverClass}"></property>
+		<property name="jdbcUrl" value="${jdbc.jdbcUrl}"></property>
+	</bean>
+	
+	<!-- 配置 SessionFactory -->
+	<bean id="sessionFactory" class="org.springframework.orm.hibernate4.LocalSessionFactoryBean">
+		<property name="dataSource" ref="dataSource"></property>
+
+		<property name="configLocation" value="classpath:hibernate.cfg.xml"></property>
+
+		<property name="mappingResources">
+			<list>
+				<value>com/wby/user/entity/User.hbm.xml</value>
+				<value>com/wby/brand/entity/Brand.hbm.xml</value>
+				<value>com/wby/phone/entity/Phone.hbm.xml</value>
+				<value>	com/wby/phonesize/entity/Phonesize.hbm.xml</value>
+
+			</list>
+		</property>
+	</bean>
+	
+	<!-- 配置 Spring 的声明式事务 -->
+	<!-- 1. 配置 hibernate 的事务管理器 -->
+	<bean id="transactionManager" class="org.springframework.orm.hibernate4.HibernateTransactionManager">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+
+	<!-- 2. 配置事务属性 -->
+	<tx:advice id="txAdvice" transaction-manager="transactionManager">
+		<tx:attributes>
+			<tx:method name="get*" read-only="true"/>
+			<tx:method name="lastNameIsValid" read-only="true"/>
+			<tx:method name="*"/>
+		</tx:attributes>
+	</tx:advice>
+	<!-- 3. 配置事务切入点, 再把事务属性和事务切入点关联起来 -->
+	<aop:config>
+	<aop:pointcut expression="execution(* com.wby.user.service.*.*(..))" id="txPointcut"/>
+	<aop:advisor advice-ref="txAdvice" pointcut-ref="txPointcut"/>
+</aop:config>
+
+
+	<tx:annotation-driven  />
+
+	<!--首页面配置bean-->
+	<bean id="indexAction"  class="com.wby.firstpage.action.IndexAction"  scope="prototype">
+		<property name="brandService" ref="brandService"></property>
+		<property name="phoneService" ref="phoneService"></property>
+	<!--	<property name="phonesizeService" ref="phonesizeService"></property>-->
+	</bean>
+
+	<!--用户配置bean-->
+	<bean id="userDao" class="com.wby.user.dao.UserDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="userService" class="com.wby.user.service.UserService" scope="prototype" >
+		<property name="userDao" ref="userDao"></property>
+	</bean>
+	<bean id="userAction" class="com.wby.user.action.UserAction" scope="prototype">
+		<property name="userService" ref="userService"></property>
+	</bean>
+
+
+	<!--品牌配置bean-->
+	<bean id="brandDao" class="com.wby.brand.dao.BrandDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="brandService" class="com.wby.brand.service.BrandService" scope="prototype">
+		<property name="brandDao" ref="brandDao"></property>
+	</bean>
+
+
+	<!--手机产品配置-->
+	<bean id="phoneDao" class="com.wby.phone.dao.PhoneDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="phoneService" class="com.wby.phone.service.PhoneService" scope="prototype">
+		<property name="phoneDao" ref="phoneDao"></property>
+	</bean>
+	<bean id="phoneAction" class="com.wby.phone.action.PhoneAction" scope="prototype">
+		<property name="phoneService" ref="phoneService"></property>
+		<property name="phonesizeService" ref="phonesizeService"></property>
+	</bean>
+
+
+	<!--尺寸
+	-->
+	<bean id="phonesizeDao" class="com.wby.phonesize.dao.PhonesizeDao" scope="prototype">
+		<property name="sessionFactory" ref="sessionFactory"></property>
+	</bean>
+	<bean id="phonesizeService" class="com.wby.phonesize.service.PhonesizeService" scope="prototype">
+		<property name="phonesizeDao" ref="phonesizeDao"></property>
+	</bean>
+
+</beans>

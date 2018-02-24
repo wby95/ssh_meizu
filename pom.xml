@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <!--groupId:公司或者组织的域名
+        artifactId:当前项目的模块名称
+        version：当前模块的版本
+    -->
+
+
+    <!--统一声明版本号
+    -->
+    <!--<properties>
+        <wby.junit.Version>4.10</wby.junit.Version>
+        properties>-->
+
+    <!--引用当前的版本号
+
+      <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>${wby.junit.Version}</version>
+            <scope>test</scope>
+        </dependency>
+    -->
+    <groupId>com.wby</groupId>
+    <artifactId>ssh_wby2</artifactId>
+    <version>1.0-SNAPSHOT</version>
+    <packaging>war</packaging>
+
+    <dependencies>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+            <version>4.10</version>
+            <scope>test</scope>
+        </dependency>
+        <!-- 添加SSH依赖 -->
+        <!-- Struts2 -->
+
+        <dependency>
+            <!--如何通过坐标到仓库中查找jar包
+             groupId+artifactId+version/artifactId+version.jar连起来的字符串作为目录结构到仓库中查找
+             artifactId+version/struts2-core/2.3.24/struts2-core.2.3.24.jar
+            -->
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-core</artifactId>
+            <version>2.3.24</version>
+        </dependency>
+        <!--
+
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.3.24.1</version>
+            <exclusions>   :想要从依赖中排除的jar包
+                <exclusion>
+                    <artifactId></artifactId>
+                    <artifactId></artifactId>
+                </exclusion>
+            </exclusions>
+        </dependency>
+
+        -->
+        <dependency>
+            <groupId>org.apache.struts</groupId>
+            <artifactId>struts2-spring-plugin</artifactId>
+            <version>2.3.24.1</version>
+        </dependency>
+
+        <!-- 添加Hibernate依赖 -->
+        <dependency>
+            <groupId>org.hibernate</groupId>
+            <artifactId>hibernate-core</artifactId>
+            <version>4.2.2.Final</version>
+        </dependency>
+
+        <!-- spring框架依赖 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-core</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+        <!-- 包含了大量注解@Autowired等。 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-beans</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+
+        <!-- 包含SessionFactory org.springframework.orm.hibernate4.LocalSessionFactoryBean -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-orm</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+
+        <!-- 包含ContextLoaderListener 监听器 -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-web</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+
+        <!--  ApplicationContextInitializer -->
+        <dependency>
+            <groupId>org.springframework</groupId>
+            <artifactId>spring-context</artifactId>
+            <version>4.2.4.RELEASE</version>
+        </dependency>
+        <!-- mysql驱动 -->
+        <dependency>
+            <groupId>mysql</groupId>
+            <artifactId>mysql-connector-java</artifactId>
+            <version>5.1.26</version>
+        </dependency>
+        <!-- c3p0数据源 -->
+        <dependency>
+            <groupId>c3p0</groupId>
+            <artifactId>c3p0</artifactId>
+            <version>0.9.1.2</version>
+        </dependency>
+
+
+        <dependency>
+            <groupId>commons-dbcp</groupId>
+            <artifactId>commons-dbcp</artifactId>
+            <version>1.4</version>
+        </dependency>
+
+        <!-- 添加Log4J依赖 -->
+        <dependency>
+            <groupId>log4j</groupId>
+            <artifactId>log4j</artifactId>
+            <version>1.2.16</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
+            <version>1.6.1</version>
+        </dependency>
+        <dependency>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-nop</artifactId>
+            <version>1.6.4</version>
+        </dependency>
+
+        <!-- AspectJ依赖 -->
+        <dependency>
+            <groupId>org.aspectj</groupId>
+            <artifactId>aspectjweaver</artifactId>
+            <version>1.8.13</version>
+        </dependency>
+
+        <!-- 添加javassist -->
+        <dependency>
+            <groupId>javassist</groupId>
+            <artifactId>javassist</artifactId>
+            <version>3.11.0.GA</version>
+        </dependency>
+        <!-- https://mvnrepository.com/artifact/javax.servlet/javax.servlet-api -->
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>4.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <!-- <scope>provided</scope>:依赖的范围-->
+        <!--                provided:开发阶段servlet-api有Maven依赖提供，项目部署忽略Maven提供的，
+                                     到了运行阶段，servlet-api由Servlet容器提供-->
+        <!--相对应的取值还有：compile:范围的依赖对主程序和测试程序都有效，依赖可传递。
+                            test：仅仅对测试程序有效
+         -->
+    </dependencies>
+
+    <build>
+        <resources>
+            <resource>
+                <directory>src/main/java</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                </includes>
+                <filtering>true</filtering>
+            </resource>
+            <resource>
+                <directory>src/main/resources</directory>
+                <includes>
+                    <include>**/*.xml</include>
+                    <include>**/*.properties</include>
+                </includes>
+            </resource>
+        </resources>
+        <plugins>
+            <!-- 统一源代码编译输出的JDK版本 -->
+            <plugin>
+                <groupId>org.apache.maven.plugins</groupId>
+                <artifactId>maven-compiler-plugin</artifactId>
+                <version>3.5.1</version>
+                <configuration>
+                    <source>1.7</source>
+                    <target>1.7</target>
+                </configuration>
+            </plugin>
+        </plugins>
+    </build>
+</project>
+
+        <!--Maven生命周期
+        Maven生命周期：Maven生命周期定义了各个构造环节的执行顺序，有了这个清单，maven就可以
+        自动化执行构建命令了
+
+        maven三套独立的生命周期
+
+        Clean Lifecycle:在进行真正的构建之前进行一些清理工作等，
+        Default Lifecycle:构建的核心部分，编译，测试，打包，安装，部署等
+        Site Lifecycle:生成项目的报告，站点，发布站点。
+
+     -->
+        <!--常用的阶段
+        compile:编译项目的源代码
+        test:使用合适的单元测试框架运行测试。这些测试代码不会打包或者部署
+        package:接受编译好的代码，打包成可发布的形式，如jar
+        install:将包安装至本地仓库，以让其他项目依赖。
+        deploy:将最终的包复制到远程仓库，以让其他开发人员与项目共享或者部署到服务器上运行。
+
+        -->
