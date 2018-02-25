@@ -35,6 +35,7 @@ public class PhoneService {
         PageBean <Phone> pageBean = new PageBean <Phone>();
 /*设置当前页数*/
         pageBean.setPage(page);
+
         /*设置显示的记录数*/
         int limit = 2;
         pageBean.setLimit(limit);
