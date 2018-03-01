@@ -33,7 +33,7 @@ public class PhoneService {
       * */
     public PageBean <Phone> findByPageBid(Integer psid, int page) {
         PageBean <Phone> pageBean = new PageBean <Phone>();
-/*设置当前页数*/
+/*设置当前页数*/.
         pageBean.setPage(page);
 
         /*设置显示的记录数*/
