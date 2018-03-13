@@ -10,7 +10,7 @@ import javax.annotation.Resource;
 /**
  * Created by Administrator on 2017/12/15.
  */
-public class UserDao extends HibernateDaoSupport {
+public class UserDao extends HibernateDaoSupport  {
 @Resource
     private SessionFactory sessionFactory;
 
